@@ -10,7 +10,7 @@ print("Начало работы", show_time())
 
 dic = {}
 start_time = datetime(2020, 1, 1)
-end_time = datetime(2020, 1, 4)
+end_time = datetime(2023, 12, 31)
 for delta in range((end_time - start_time).days + 1):
     data = (start_time + timedelta(days=delta))
     data_now = data.strftime("%Y-%m-%d")
@@ -20,7 +20,7 @@ for delta in range((end_time - start_time).days + 1):
     [dic.setdefault(data_now, msg[key]['data']['body']['coins']) for key in msg.keys() if 'get_historical_snapshot' in key]
 
     print(show_time(), "Скачано", data_now)
-    ends = {"2020-01-01","2020-01-02","2020-01-03"}
+    ends = {"2020-12-31","2021-12-31","2022-12-31", "2023-12-31"}
     if data_now in ends:
         name = f"./data/data_{data_now}.json"
         print(show_time(), "Запись на диск")
