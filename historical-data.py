@@ -22,7 +22,7 @@ for delta in range((end_time - start_time).days + 1):
     print(show_time(), "Скачано", data_now)
     ends = {"2020-01-01","2020-01-02","2020-01-03"}
     if data_now in ends:
-        name = f"data_{data_now}.json"
+        name = f"./data/data_{data_now}.json"
         print(show_time(), "Запись на диск")
         with open(name, 'a') as f:
             json.dump(dic, f, indent=4)
